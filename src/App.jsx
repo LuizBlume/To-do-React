@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from 'react';
+import React from 'react';
+import './Sass/style.css'
+import Button from './components/ButtonAdd.jsx'
+import Input from './components/InputText.jsx'
+import Result from './components/ResultTask.jsx';
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
+  const handleInputChange = (newTask) => {
+    setTask(newTask);
+  };
+  const handleAddTask = () => {
+    if (task.trim() !== '') {
+      setTasks([...tasks, task]);
+      setTask('');
+    }
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='container'>
+      <div className='form'>
+        <Input value={task} onChange={handleInputChange} />
+        <Button onClick={handleAddTask} />
+        <div className='result-end'>
+          <Result results={tasks} />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 

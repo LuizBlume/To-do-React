@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import 'components/colors';
+@import 'components/button';
+@import 'components/input';
+@import 'components/result';
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $gray;
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        height: 650px;
+        background-color: $form;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    }
+}
