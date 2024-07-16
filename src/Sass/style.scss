@@ -3,10 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 @import 'components/colors';
 @import 'components/button';
 @import 'components/input';
 @import 'components/result';
+
 .container {
     display: flex;
     justify-content: center;
@@ -23,5 +25,25 @@
         background-color: $form;
         border-radius: 20px;
         box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        border: 1px solid $gray;
+        animation: changeBorderColor 3s linear infinite;
+
+    }
+    @keyframes changeBorderColor {
+        0% {
+            border-color: #414141;
+        }
+
+        50% {
+            border-color: #a5a5a5;
+        }
+
+        75% {
+            border-color: #777777;
+        }
+
+        100% {
+            border-color: #414141;
+        }
     }
 }

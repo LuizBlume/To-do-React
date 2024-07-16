@@ -6,11 +6,10 @@
     font-weight: bold;
     color: #fff;
     text-align: center;
-    text-transform: uppercase;
     letter-spacing: 0.2rem;
-    text-shadow: 0 0 0.5rem #000;
+    text-shadow: 0 0 0.5rem $white;
     border-radius: 1rem;
-}
-.result-end {
-    display: block;
+    .result-end {
+        display: block;
+    }
 }
